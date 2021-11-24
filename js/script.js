@@ -3,18 +3,25 @@
 
 const timer = setTimeout(guessNum, 2000); 
 
+
     let numbers = [];
     for (let i = 0; i < 5; i++)
     {
     numbers.push(Math.floor(Math.random() * 100) + 1);
     }
 
-    document.getElementById('container').innerHTML = numbers;
+    const p = document.createElement('p');
+    p.innerText = "Hai 30 secondi per memorizzare questi numeri!";      
+    const containerNum = document.getElementById('container-numbers')
+    container.innerHTML = numbers;
+    document.getElementById("container").appendChild(p);
+
     console.log(numbers);
 
     let sceltaUser = [];
     let score = 0;
-    function guessNum () {   
+    function guessNum () {
+        container.innerHTML = '';
         for (let i = 0; i < 5; i++) 
         {
         let scelta = parseInt(prompt('Inserisci un numero'));
@@ -22,8 +29,9 @@ const timer = setTimeout(guessNum, 2000);
          console.log(sceltaUser);
          if (sceltaUser[i]==numbers[i]) {
             score++;
-            console.log(score);
+            
          }
         }
-        
+        console.log(score);
+        alert('Ne hai indovinati: ' + score)
     }
