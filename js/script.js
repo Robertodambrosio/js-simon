@@ -1,11 +1,7 @@
 //********Visualizzare in pagina 5 numeri casuali.
-
-// const container = document.getElementById('container');
-// container.innerHTML = randomNum();
-
 // *********** Da lì parte un timer di 30 secondi.
 
-const timer = setTimeout(guessNum, 2000); {
+const timer = setTimeout(guessNum, 2000); 
 
     let numbers = [];
     for (let i = 0; i < 5; i++)
@@ -16,13 +12,18 @@ const timer = setTimeout(guessNum, 2000); {
     document.getElementById('container').innerHTML = numbers;
     console.log(numbers);
 
-    function guessNum (){
-        let sceltaUser = []
+    let sceltaUser = [];
+    let score = 0;
+    function guessNum () {   
         for (let i = 0; i < 5; i++) 
         {
-         sceltaUser.push(parseInt(prompt('Inserisci un numero')));
+        let scelta = parseInt(prompt('Inserisci un numero'));
+        sceltaUser.push(scelta);
          console.log(sceltaUser);
+         if (sceltaUser[i]==numbers[i]) {
+            score++;
+            console.log(score);
+         }
         }
-}
-}
-
+        
+    }
