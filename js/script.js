@@ -1,7 +1,7 @@
 //********Visualizzare in pagina 5 numeri casuali.
 // *********** Da lì parte un timer di 30 secondi.
 
-const timer = setTimeout(guessNum, 2000); 
+const timer = setTimeout(guessNum, 30000); 
 
 
     let numbers = [];
